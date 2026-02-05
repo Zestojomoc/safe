@@ -1,87 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Be My Valentine?</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <title>Be My Valentine 💘</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: Arial, sans-serif;
+      background: #fff0f5;
       text-align: center;
-      background: #fff5f5;
-      padding: 40px;
-      color: #333;
+      padding: 30px;
     }
 
-    img.main-gif {
-      width: 250px;
+    img {
+      width: 260px;
       border-radius: 12px;
       margin-bottom: 20px;
     }
 
-    h1 {
-      font-size: 28px;
-      margin-bottom: 25px;
-      color: #e53e64;
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 20px;
+    h2 {
+      margin-bottom: 20px;
     }
 
     button {
-      padding: 14px 26px;
       font-size: 20px;
+      padding: 12px 24px;
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      transition: all 0.2s ease;
+      margin: 10px;
     }
 
-    #yesBtn {
-      background: #ff4e70;
+    #yes {
+      background: #ff4d6d;
       color: white;
     }
 
-    #noBtn {
-      background: #bbb;
-      color: #222;
+    #no {
+      background: #ccc;
     }
   </style>
 </head>
 <body>
 
-  <img id="mainGif" class="main-gif" src="https://media.giphy.com/media/BzyTuYCmvSORqs1ABM/giphy.gif" />
+  <img id="pic" src="ask.jpg">
 
-  <h1>Will you be my Valentine? 💘</h1>
+  <h2>Will you be my Valentine? 💖</h2>
 
-  <div class="buttons">
-    <button id="yesBtn" onclick="onYes()">Yes</button>
-    <button id="noBtn" onclick="onNo()">No</button>
-  </div>
+  <button id="yes" onclick="yes()">Yes</button>
+  <button id="no" onclick="no()">No</button>
 
   <script>
     let size = 20;
 
-    function onNo() {
+    function no() {
       size += 10;
-      const yes = document.getElementById("yesBtn");
-      yes.style.fontSize = size + "px";
-      yes.style.padding = (size / 1.5) + "px " + (size / 1) + "px";
+      const yesBtn = document.getElementById("yes");
+      yesBtn.style.fontSize = size + "px";
+      yesBtn.style.padding = size + "px";
 
-      document.getElementById("mainGif").src = 
-        "https://media.giphy.com/media/j5QcmXoFWl4Q0/giphy.gif";
+      document.getElementById("pic").src = "no.gif";
     }
 
-    function onYes() {
+    function yes() {
       document.body.innerHTML = `
-        <img class="main-gif" src="https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif" />
-        <h1>YAYYYYY!!! 💖🎉</h1>
-        <p>Happy Valentine’s Day, my love ❤️</p>
+        <img src="yes.gif">
+        <h1>YAYYYYY!!! 🎉💘</h1>
+        <p>Happy Valentine’s Day ❤️</p>
       `;
     }
   </script>
